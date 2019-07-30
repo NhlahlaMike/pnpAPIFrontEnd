@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+.navbar {
+    background-color:#ab2247;
+    max-height: 35px !important;
+}
+.navbar .navbar-brand { color: white; font-size: 12px; font-weight: 600;}
+.navbar .navbar-collapse .navbar-nav a{
+color: white; font-size: 12px; font-weight: 600;
+}
+.navbar .navbar-collapse .navbar-nav span{
+    color: white; font-size: 12px; font-weight: 600;
+}
+.navbar .navbar-brand:hover { color: white; font-size: 12px; font-weight: 600;}
+.navbar .navbar-collapse .navbar-nav a:hover{
+color: white; font-size: 12px; font-weight: 600; opacity: .5;
+}
+.navbar .navbar-collapse .navbar-nav span:hover{
+    color: white; font-size: 12px; font-weight: 600;
+}
+#toast-container > div {
+    opacity:1;
+}
