@@ -9,10 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserService } from './service/user.service';
 import { FormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    UserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       progressBar: true
