@@ -1,18 +1,18 @@
+import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../service/user.service';
-import { ToastrService } from './../../../../node_modules/ngx-toastr';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styles: []
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private service: UserService, private toastr: ToastrService) { }
+  constructor(public service: UserService, private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.service.formModel.reset();
   }
 
   onSubmit() {

@@ -25,3 +25,8 @@ color: white; font-size: 12px; font-weight: 600; opacity: .5;
 #toast-container > div {
     opacity:1;
 }
+#toast-container > .toast-success {
+    background-image: none;
+    background-color: green;
+    color: white;
+}

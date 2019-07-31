@@ -71,3 +71,6 @@ table td input.form-control {
     .form-group{
         margin-bottom: 4px;
         }
+#toast-container > div {
+            opacity:1;
+        }        
