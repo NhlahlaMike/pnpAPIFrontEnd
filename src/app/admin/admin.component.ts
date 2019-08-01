@@ -1,6 +1,7 @@
 import { UserService } from './../service/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -8,10 +9,18 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor(public service: UserService, private toastr: ToastrService) { }
+  userDetails;
+  constructor(private router: Router, public service: UserService, private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.service.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res;
+      },
+      err => {
+        console.log(err);
+      },
+    );
     this.service.formModel.reset();
   }
 

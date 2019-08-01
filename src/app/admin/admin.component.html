@@ -1,1 +1,144 @@
-<p>admin works!</p>
+<div class="container">
+    <div class="row">
+     <div class="col-sm-12 offset-sm-0 text-center" align="center">
+   
+       <h1 class="headerWelcome">
+         
+       </h1>
+       <div class="subHeadArea">
+         <h3 class="ss heading2">
+           Sign up in seconds to start shopping online, and get groceries and <br> more delivered to your door.
+         </h3>
+       </div>
+
+<form [formGroup]="service.formModel" class="justify-content-center offset-sm-3" autocomplete="off" (submit)="onSubmit()" align="center">
+  <table class="table-bordered" style="border: none">
+    <tbody>
+        <tr>
+            <div class="form-group required">
+            <td>
+                <div class="col-md-2">
+                    <label for="FormControlFirstName" style="color: black;font-size: small;font-weight: 600;" >FirstName</label>
+                </div>
+            </td>
+            <td>
+                <div class="col-lg-16">
+                    <input type="text" formControlName="FirstName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+                </div>
+            </td>
+            <td style="padding-left: 10px; border: none; text-align: left;">
+                <div class="col-md-16">
+                    <span style="font-weight: bold;color: red;">
+                        <span *ngIf="service.formModel.get('FirstName').touched && service.formModel.get('FirstName').errors?.required">This field is mandatory.</span>
+                    </span>                
+                </div>                      
+            </td>
+            </div>                   
+        </tr>
+ 
+        <tr>
+            <div class="form-group required">
+            <td>
+                <div class="col-md-2">
+                    <label for="FormControlSurname" style="color: black;font-size: small;font-weight: 600;" >Surname</label>
+                </div>
+            </td>
+            <td>
+                <div class="col-md-16">
+                    <input type="text" formControlName="Surname" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+                </div>
+            </td>
+            <td style="padding-left: 10px; border: none; text-align: left;">
+                    <div class="col-md-16">
+                        <span style="font-weight: bold;color: red;">
+                            <span *ngIf="service.formModel.get('Surname').touched && service.formModel.get('Surname').errors?.required">This field is mandatory.</span>
+                        </span>                
+                </div>                      
+            </td>  
+            </div>                 
+        </tr>
+
+        <tr>
+            <div class="form-group required">
+            <td>
+                <div class="col-md-2">
+                    <label for="FormControlEmail" style="color: black;font-size: small;font-weight: 600;" >Email</label>
+                </div>
+            </td>
+            <td>
+                <div class="col-md-16">
+                    <input type="text" formControlName="Email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+                </div>
+            </td>
+            <td style="padding-left: 10px; border: none; text-align: left;">
+                <div class="col-md-16">
+                    <span style="font-weight: bold;color: red;">
+                        <span *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.required">This field is mandatory.</span>
+                        <span *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Enter valid email.</span>    
+                    </span>                
+                </div>                      
+            </td> 
+            </div>                  
+        </tr>
+        <div formGroupName="Passwords">    
+        <tr>
+            <div class="form-group required">
+            <td>
+                <div class="col-md-2">
+                    <label for="FormControlPassword" style="color: black;font-size: small;font-weight: 600;" >Password</label>
+                </div>
+            </td>
+            <td>
+                <div class="col-md-16">
+                    <input type="text" formControlName="Password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+                </div>
+            </td>
+            <td style="padding-left: 10px; border: none; text-align: left;">
+                <div class="col-md-16">
+                    <span style="font-weight: bold;color: red;">
+                            <span class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This field is mandatory.</span>
+                            <span class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minimum 4 characters required.</span>
+                    </span>                
+                </div>                      
+            </td> 
+            </div>                  
+        </tr> 
+
+        <tr>
+            <div class="form-group required">
+            <td>
+                <div class="col-md-6">
+                    <label for="FormControlConfirmPassword" style="color: black;font-size: small;font-weight: 600;" >Confirm Password</label>
+                </div>
+            </td>
+            <td>
+                <div class="col-md-16">
+                    <input type="text" formControlName="ConfirmPassword" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"> 
+                </div>
+            </td>
+            <td style="padding-left: 10px; border: none; text-align: left;">
+                <div class="col-md-16">
+                    <span style="font-weight: bold;color: red;">
+                            <span class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This field is mandatory.</span>
+                            <span class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match.</span>
+                    </span>                
+                </div>                      
+            </td> 
+            </div>                  
+        </tr>        
+        </div>  
+    </table>
+    <div class="form-group">
+        <button type="submit" style="margin-right: 30%;" [disabled]="!service.formModel.valid" class="btn btn-outline-success"><b>Register</b></button>  
+    </div>
+    </form>
+        </div>
+    </div>
+</div>
+<div class="card m-5" style="width:18rem" *ngIf="userDetails">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+      <li class="list-group-item"><strong>FullName : </strong>{{userDetails.firstName}}</li>
+      <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
+    </ul>
+  </div>
