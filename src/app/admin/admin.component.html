@@ -142,3 +142,10 @@
       <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
     </ul>
   </div>
+  <ul>
+    <li *ngFor="let userDetail of userDetails">
+        {{userDetail.firstName}}
+        {{userDetail.email}}
+        {{userDetail.userName}}
+      </li>
+  </ul>

@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         this.isLoggedIn = true;
         localStorage.setItem('token', res.token);
+        const tk = localStorage.getItem('token');
         this.router.navigateByUrl('/admin');
       },
       err => {

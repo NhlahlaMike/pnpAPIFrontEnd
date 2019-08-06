@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router, public service: UserService, private toastr: ToastrService) { }
 
   ngOnInit() {
+
     this.service.getUserProfile().subscribe(
       res => {
         this.userDetails = res;
